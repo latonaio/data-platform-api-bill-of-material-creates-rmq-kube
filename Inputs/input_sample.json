@@ -1,13 +1,9 @@
 {
-	"connection_key": "request",
+	"connection_key": "response",
 	"result": true,
 	"redis_key": "abcdefg",
 	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
-	"api_status_code": 200,
-	"runtime_session_id": "boi9ar543dg91ipdnspi099u231280ab0v8af0ew",
-	"business_partner": 201,
-	"service_label": "BILL_OF_MATERIAL",
-	"Header": {
+	"BillOfMaterial": {
 		"PartnerFunction": "",
 		"BusinessPartner": null,
 		"BillOfMaterial": "",
@@ -52,7 +48,7 @@
 		"PlantName": "",
 		"BillOfMaterialHdrDetailsText": "",
 		"SelectedBillOfMaterialVersion": "",
-		"Item": {
+		"BillOfMaterialItem": {
 			"BillOfMaterialItemNodeNumber": "",
 			"HeaderChangeDocument": "",
 			"Material": "",
@@ -66,8 +62,8 @@
 			"IsDeleted": null
 		}
 	},
-	"api_schema": "DPFMBillOfMaterialCreates",
+	"api_schema": "DPFMBillOfMaterialReads",
 	"accepter": ["Header"],
-	"bill_of_material": null,
+	"material_code": "21",
 	"deleted": false
 }

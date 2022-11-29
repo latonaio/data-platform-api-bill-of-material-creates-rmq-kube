@@ -63,7 +63,6 @@ func (c *DPFMAPICaller) AsyncBillOfMaterialCreates(
 	input *dpfm_api_input_reader.SDC,
 
 	log *logger.Logger,
-	// msg rabbitmq.RabbitmqMessage,
 ) []error {
 	wg := sync.WaitGroup{}
 	mtx := sync.Mutex{}
@@ -83,7 +82,6 @@ func (c *DPFMAPICaller) AsyncBillOfMaterialCreates(
 		}
 	}
 
-	// 後処理
 	ticker := time.NewTicker(10 * time.Second)
 	select {
 	case e := <-sqlUpdateFin:
@@ -103,40 +101,9 @@ func (c *DPFMAPICaller) AsyncBillOfMaterialCreates(
 
 ## Output  
 本マイクロサービスでは、[golang-logging-library-for-data-platform](https://github.com/latonaio/golang-logging-library-for-data-platform) により、以下のようなデータがJSON形式で出力されます。  
-以下の sample.json の例は BOM（部品表）データ の BOM（部品表）データデータ が取得された結果の JSON の例です。  
-以下の項目のうち、"PartnerFunction" ～ "PartnerFunctionName" は、/DPFM_API_Output_Formatter/type.go 内 の Type PartnerFunction {} による出力結果です。"cursor" ～ "time"は、golang-logging-library による 定型フォーマットの出力結果です。  
+以下の sample.json の例は BOM（部品表) の BOM（部品表）データ が取得された結果の JSON の例です。  
+以下の項目のうち、"XXXXXXXX" ～ "XXXXXXXX" は、/DPFM_API_Output_Formatter/type.go 内 の Type Header {} による出力結果です。"cursor" ～ "time"は、golang-logging-library-for-data-platform による 定型フォーマットの出力結果です。  
 
 ```
-{
-	"connection_key": "request",
-	"result": true,
-	"redis_key": "abcdefg",
-	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
-	"api_status_code": 200,
-	"runtime_session_id": "boi9ar543dg91ipdnspi099u231280ab0v8af0ew",
-	"business_partner": 201,
-	"service_label": "BILL_OF_MATERIAL",
-	"PartnerFunction": {
-		"PartnerFunction": "TEST",
-		"PartnerFunctionText": {
-			"PartnerFunction": "TEST",
-			"Language": "JA",
-			"PartnerFunctionName": "テストネーム"
-		}
-	},
-	"api_schema": "DPFMPartnerFunctionCreates",
-	"accepter": [
-		"PartnerFunction"
-	],
-	"order_id": null,
-	"deleted": false,
-	"sql_update_result": true,
-	"sql_update_error": "",
-	"subfunc_result": null,
-	"subfunc_error": "",
-	"exconf_result": null,
-	"exconf_error": "",
-	"api_processing_result": true,
-	"api_processing_error": ""
-}
+XXXXXXXXXXXXXXXXXXXXXX
 ```
