@@ -98,6 +98,7 @@ func (c *DPFMAPICaller) AsyncBillOfMaterialCreates(
 
 	return nil
 }
+```
 
 ## Output  
 本マイクロサービスでは、[golang-logging-library-for-data-platform](https://github.com/latonaio/golang-logging-library-for-data-platform) により、以下のようなデータがJSON形式で出力されます。  
