@@ -8,7 +8,7 @@ WORKDIR /go/src/github.com/latonaio
 
 COPY . .
 RUN go mod download
-RUN go build -o data-platform-api-pbill-of-material-creates-rmq-kube ./
+RUN go build -o data-platform-api-bill-of-material-creates-rmq-kube ./
 
 # Runtime Container
 FROM alpine:3.14
