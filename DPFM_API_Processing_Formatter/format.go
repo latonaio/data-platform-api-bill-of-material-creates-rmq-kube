@@ -8,13 +8,13 @@ func ConvertToHeaderUpdates(header dpfm_api_input_reader.Header) *HeaderUpdates 
 	data := header
 
 	return &HeaderUpdates{
-		BillOfMaterial:              data.BillOfMaterial,
-		BOMAlternativeText:          data.BOMAlternativeText,
-		BOMHeaderQuantityInBaseUnit: data.BOMHeaderQuantityInBaseUnit,
-		ValidityStartDate:           data.ValidityStartDate,
-		ValidityEndDate:             data.ValidityEndDate,
-		BillOfMaterialHeaderText:    data.BillOfMaterialHeaderText,
-		IsMarkedForDeletion:         data.IsMarkedForDeletion,
+			BillOfMaterial:                           data.BillOfMaterial,
+			ProductStandardQuantityInBaseUnit:        data.ProductStandardQuantityInBaseUnit,
+			ProductStandardQuantityInDeliveryUnit:    data.ProductStandardQuantityInDeliveryUnit,
+			ProductStandardQuantityInProductionUnit:  data.ProductStandardQuantityInProductionUnit,
+			BillOfMaterialHeaderText:                 data.BillOfMaterialHeaderText,
+			ValidityStartDate:                        data.ValidityStartDate,
+			ValidityEndDate:                          data.ValidityEndDate,
 	}
 }
 
@@ -23,13 +23,14 @@ func ConvertToItemUpdates(header dpfm_api_input_reader.Header, item dpfm_api_inp
 	data := item
 
 	return &ItemUpdates{
-		BillOfMaterial:            dataHeader.BillOfMaterial,
-		BillOfMaterialItem:        data.BillOfMaterialItem,
-		BOMAlternativeText:        data.BOMAlternativeText,
-		BOMItemQuantityInBaseUnit: data.BOMItemQuantityInBaseUnit,
-		ValidityStartDate:         data.ValidityStartDate,
-		ValidityEndDate:           data.ValidityEndDate,
-		BillOfMaterialItemText:    data.BillOfMaterialItemText,
-		IsMarkedForDeletion:       data.IsMarkedForDeletion,
+			BillOfMaterial:                                  data.BillOfMaterial,
+			BillOfMaterialItem:                              data.BillOfMaterialItem,
+			ComponentProductStandardQuantityInBaseUnuit:     data.ComponentProductStandardQuantityInBaseUnuit,
+			ComponentProductStandardQuantityInDeliveryUnuit: data.ComponentProductStandardQuantityInDeliveryUnuit,
+			ComponentProductStandardScrapInPercent:          data.ComponentProductStandardScrapInPercent,
+			IsMarkedForBackflush:                            data.IsMarkedForBackflush,
+			BillOfMaterialItemText:                          data.BillOfMaterialItemText,
+			ValidityStartDate:                               data.ValidityStartDate,
+			ValidityEndDate:                                 data.ValidityEndDate,
 	}
 }
