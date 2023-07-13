@@ -19,8 +19,8 @@ type Item struct {
 	ComponentProductDeliverFromPlant                string   `json:"ComponentProductDeliverFromPlant"`
 	StockConfirmationBusinessPartner                int      `json:"StockConfirmationBusinessPartner"`
 	StockConfirmationPlant                          string   `json:"StockConfirmationPlant"`
-	ComponentProductStandardQuantityInBaseUnuit     float32  `json:"ComponentProductStandardQuantityInBaseUnuit"`
-	ComponentProductStandardQuantityInDeliveryUnuit float32  `json:"ComponentProductStandardQuantityInDeliveryUnuit"`
+	ComponentProductStandardQuantityInBaseUnit      float32  `json:"ComponentProductStandardQuantityInBaseUnit"`
+	ComponentProductStandardQuantityInDeliveryUnit  float32  `json:"ComponentProductStandardQuantityInDeliveryUnit"`
 	ComponentProductBaseUnit                        string   `json:"ComponentProductBaseUnit"`
 	ComponentProductDeliveryUnit                    string   `json:"ComponentProductDeliveryUnit"`
 	ComponentProductStandardScrapInPercent          *float32 `json:"ComponentProductStandardScrapInPercent"`

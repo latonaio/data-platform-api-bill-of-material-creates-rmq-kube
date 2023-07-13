@@ -25,8 +25,8 @@ func ConvertToItemUpdates(header dpfm_api_input_reader.Header, item dpfm_api_inp
 	return &ItemUpdates{
 			BillOfMaterial:                                  data.BillOfMaterial,
 			BillOfMaterialItem:                              data.BillOfMaterialItem,
-			ComponentProductStandardQuantityInBaseUnuit:     data.ComponentProductStandardQuantityInBaseUnuit,
-			ComponentProductStandardQuantityInDeliveryUnuit: data.ComponentProductStandardQuantityInDeliveryUnuit,
+			ComponentProductStandardQuantityInBaseUnit:      data.ComponentProductStandardQuantityInBaseUnit,
+			ComponentProductStandardQuantityInDeliveryUnit:  data.ComponentProductStandardQuantityInDeliveryUnit,
 			ComponentProductStandardScrapInPercent:          data.ComponentProductStandardScrapInPercent,
 			IsMarkedForBackflush:                            data.IsMarkedForBackflush,
 			BillOfMaterialItemText:                          data.BillOfMaterialItemText,

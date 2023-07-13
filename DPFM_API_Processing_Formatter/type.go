@@ -13,8 +13,8 @@ type HeaderUpdates struct {
 type ItemUpdates struct {
 	BillOfMaterial                                  int      `json:"BillOfMaterial"`
 	BillOfMaterialItem                              int      `json:"BillOfMaterialItem"`
-	ComponentProductStandardQuantityInBaseUnuit     float32  `json:"ComponentProductStandardQuantityInBaseUnuit"`
-	ComponentProductStandardQuantityInDeliveryUnuit float32  `json:"ComponentProductStandardQuantityInDeliveryUnuit"`
+	ComponentProductStandardQuantityInBaseUnit      float32  `json:"ComponentProductStandardQuantityInBaseUnit"`
+	ComponentProductStandardQuantityInDeliveryUnit  float32  `json:"ComponentProductStandardQuantityInDeliveryUnit"`
 	ComponentProductStandardScrapInPercent          *float32 `json:"ComponentProductStandardScrapInPercent"`
 	IsMarkedForBackflush                            *bool    `json:"IsMarkedForBackflush"`
 	BillOfMaterialItemText                          *string  `json:"BillOfMaterialItemText"`
