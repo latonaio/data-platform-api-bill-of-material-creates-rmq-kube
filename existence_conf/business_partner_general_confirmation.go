@@ -108,11 +108,11 @@ func getHeaderBPGeneralExistenceConfKey(mapper ExConfMapper, header *dpfm_api_in
 
 	switch mapper.Field {
 	case "OwnerBusinessPartner":
-		if header.OwnerBusinessPartner == nil {
-			bpID = 0
-		} else {
-			bpID = *header.OwnerBusinessPartner
-		}
+		//if header.OwnerBusinessPartner == nil {
+		//	bpID = 0
+		//} else {
+		//	bpID = *header.OwnerBusinessPartner
+		//}
 	}
 
 	return bpID
@@ -123,11 +123,11 @@ func getItemBPGeneralExistenceConfKey(mapper ExConfMapper, item *dpfm_api_input_
 
 	switch mapper.Field {
 	case "ComponentProductBusinessPartner":
-		if item.ComponentProductBusinessPartner == nil {
-			bpID = 0
-		} else {
-			bpID = *item.ComponentProductBusinessPartner
-		}
+		//if item.ComponentProductBusinessPartner == nil {
+		//	bpID = 0
+		//} else {
+		//	bpID = *item.ComponentProductBusinessPartner
+		//}
 	}
 
 	return bpID

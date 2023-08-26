@@ -35,36 +35,36 @@ func NewDPFMAPICaller(
 	}
 }
 
-func (c *DPFMAPICaller) AsyncBillOfMaterialCreates(
+func (c *DPFMAPICaller) AsyncCreates(
 	accepter []string,
 	input *dpfm_api_input_reader.SDC,
 	output *dpfm_api_output_formatter.SDC,
 	log *logger.Logger,
 ) (interface{}, []error) {
-	wg := sync.WaitGroup{}
+	//wg := sync.WaitGroup{}
 	mtx := sync.Mutex{}
 	errs := make([]error, 0, 5)
-	exconfAllExist := false
+	//exconfAllExist := false
 
-	exconfFin := make(chan error)
+	//exconfFin := make(chan error)
 
 	// 他PODへ問い合わせ
-	wg.Add(1)
-	go c.exconfProcess(&mtx, &wg, exconfFin, input, output, &exconfAllExist, accepter, &errs, log)
+	//wg.Add(1)
+	//go c.exconfProcess(&mtx, &wg, exconfFin, input, output, &exconfAllExist, accepter, &errs, log)
 
 	// 処理待ち
-	ticker := time.NewTicker(10 * time.Second)
-	if err := c.finWait(&mtx, exconfFin, ticker); err != nil || len(errs) != 0 {
-		if err != nil {
-			errs = append(errs, err)
-		}
-		return dpfm_api_output_formatter.Message{}, errs
-	}
-	if !exconfAllExist {
-		mtx.Lock()
-		return dpfm_api_output_formatter.Message{}, nil
-	}
-	wg.Wait()
+	//ticker := time.NewTicker(10 * time.Second)
+	//if err := c.finWait(&mtx, exconfFin, ticker); err != nil || len(errs) != 0 {
+	//	if err != nil {
+	//		errs = append(errs, err)
+	//	}
+	//	return dpfm_api_output_formatter.Message{}, errs
+	//}
+	//if !exconfAllExist {
+	//	mtx.Lock()
+	//	return dpfm_api_output_formatter.Message{}, nil
+	//}
+	//wg.Wait()
 
 	var response interface{}
 	// SQL処理

@@ -110,13 +110,13 @@ func getHeaderPlantExistenceConfKey(mapper ExConfMapper, header *dpfm_api_input_
 
 	switch mapper.Field {
 	case "OwnerPlant":
-		if header.OwnerPlant == nil || header.OwnerBusinessPartner == nil {
-			plant = ""
-			bpID = 0
-		} else {
-			plant = *header.OwnerPlant
-			bpID = *header.OwnerBusinessPartner
-		}
+		//if header.OwnerPlant == nil || header.OwnerBusinessPartner == nil {
+		//	plant = ""
+		//	bpID = 0
+		//} else {
+		//	plant = *header.OwnerPlant
+		//	bpID = *header.OwnerBusinessPartner
+		//}
 	}
 
 	return plant, bpID
@@ -126,13 +126,13 @@ func getItemPlantExistenceConfKey(mapper ExConfMapper, item *dpfm_api_input_read
 	var plant string
 	var bpID int
 
-	if item.StockConfirmationPlant == nil || item.ComponentProductBusinessPartner == nil {
-		plant = ""
-		bpID = 0
-	} else {
-		plant = *item.StockConfirmationPlant
-		bpID = *item.ComponentProductBusinessPartner
-	}
+	//if item.StockConfirmationPlant == nil || item.ComponentProductBusinessPartner == nil {
+	//	plant = ""
+	//	bpID = 0
+	//} else {
+	//	plant = *item.StockConfirmationPlant
+	//	bpID = *item.ComponentProductBusinessPartner
+	//}
 
 	return plant, bpID
 }
