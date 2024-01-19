@@ -21,8 +21,9 @@ data-platform-api-bill-of-material-creates-rmq-kube が対応する APIサービ
 ## 本レポジトリ に 含まれる API名
 data-platform-api-bill-of-material-creates-rmq-kube には、次の API をコールするためのリソースが含まれています。  
 
-* A_Header（BOM（部品表）データ - ヘッダデータ）
-* A_Item（BOM（部品表）データ - 明細データ）
+* A_Header（BOM（部品表） - ヘッダ）
+* A_Item（BOM（部品表） - 明細）
+* A_ItemPricingElement（BOM（部品表） - 明細価格決定要素）
 
 ## API への 値入力条件 の 初期値
 data-platform-api-bill-of-material-creates-rmq-kube において、API への値入力条件の初期値は、入力ファイルレイアウトの種別毎に、次の通りとなっています。  

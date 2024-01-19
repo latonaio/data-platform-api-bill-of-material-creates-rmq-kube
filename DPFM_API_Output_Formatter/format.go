@@ -34,6 +34,21 @@ func ConvertToItemCreates(sdc *dpfm_api_input_reader.SDC) (*[]Item, error) {
 	return &items, nil
 }
 
+func ConvertToItemPricingElementCreates(sdc *dpfm_api_input_reader.SDC) (*[]ItemPricingElement, error) {
+	itemPricingElements := make([]ItemPricingElement, 0)
+
+	for _, data := range sdc.Header.Item.ItemPricingElement {
+		itemPricingElement, err := TypeConverter[*ItemPricingElement](data)
+		if err != nil {
+			return nil, err
+		}
+
+		itemPricingElements = append(itemPricingElements, *itemPricingElement)
+	}
+
+	return &itemPricingElements, nil
+}
+
 func ConvertToHeaderUpdates(headerData dpfm_api_input_reader.Header) (*Header, error) {
 	data := headerData
 
@@ -58,6 +73,21 @@ func ConvertToItemUpdates(itemUpdates *[]dpfm_api_processing_formatter.ItemUpdat
 	}
 
 	return &items, nil
+}
+
+func ConvertToItemPricingElementUpdates(itemPricingElementUpdates *[]dpfm_api_processing_formatter.ItemPricingElementUpdates) (*[]ItemPricingElement, error) {
+	itemPricingElements := make([]ItemPricingElement, 0)
+
+	for _, data := range *itemPricingElementUpdates {
+		itemPricingElement, err := TypeConverter[*ItemPricingElement](data)
+		if err != nil {
+			return nil, err
+		}
+
+		itemPricingElements = append(itemPricingElements, *itemPricingElement)
+	}
+
+	return &itemPricingElements, nil
 }
 
 func TypeConverter[T any](data interface{}) (T, error) {

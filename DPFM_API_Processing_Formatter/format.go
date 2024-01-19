@@ -23,8 +23,8 @@ func ConvertToItemUpdates(header dpfm_api_input_reader.Header, item dpfm_api_inp
 	data := item
 
 	return &ItemUpdates{
-		BillOfMaterial:     data.BillOfMaterial,
-		BillOfMaterialItem: data.BillOfMaterialItem,
+		BillOfMaterial:     							data.BillOfMaterial,
+		BillOfMaterialItem: 							data.BillOfMaterialItem,
 		ComponentProductStandardQuantityInBaseUnit:     *data.ComponentProductStandardQuantityInBaseUnit,
 		ComponentProductStandardQuantityInDeliveryUnit: *data.ComponentProductStandardQuantityInDeliveryUnit,
 		ComponentProductStandardScrapInPercent:         data.ComponentProductStandardScrapInPercent,
@@ -32,5 +32,22 @@ func ConvertToItemUpdates(header dpfm_api_input_reader.Header, item dpfm_api_inp
 		BillOfMaterialItemText:                         data.BillOfMaterialItemText,
 		ValidityStartDate:                              data.ValidityStartDate,
 		ValidityEndDate:                                data.ValidityEndDate,
+	}
+}
+
+func ConvertToItemPricingElementUpdates(header dpfm_api_input_reader.Header, item dpfm_api_input_reader.Item, itemPricingElement dpfm_api_input_reader.ItemPricingElement) *ItemPricingElementUpdates {
+	//dataHeader := header
+	data := itemPricingElement
+
+	return &ItemPricingElementUpdates{
+		BillOfMaterial:     							data.BillOfMaterial,
+		BillOfMaterialItem: 							data.BillOfMaterialItem,
+		PricingProcedureCounter:						data.PricingProcedureCounter,
+		PricingDate:									data.PricingDate,
+		ConditionRateValue:								data.ConditionRateValue,
+		ConditionRateValueUnit:							data.ConditionRateValueUnit,
+		ConditionScaleQuantity:							data.ConditionScaleQuantity,
+		TaxCode:										data.TaxCode,
+		ConditionAmount:								data.ConditionAmount,
 	}
 }

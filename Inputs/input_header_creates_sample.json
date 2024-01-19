@@ -5,11 +5,11 @@
 	"filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
 	"api_status_code": 200,
 	"runtime_session_id": "boi9ar543dg91ipdnspi099u231280ab0v8af0ew",
-	"business_partner": 201,
+	"business_partner": null,
 	"service_label": "BILL_OF_MATERIAL",
-	"api_type": "updates",
+	"api_type": "creates",
 	"BillOfMaterial": {
-		"BillOfMaterial": 280000001,
+		"BillOfMaterial": null,
 		"BillOfMaterialType": "",
 		"SupplyChainRelationshipID": null,
 		"SupplyChainRelationshipDeliveryID": null,
@@ -27,12 +27,12 @@
 		"ProductBaseUnit": "",
 		"ProductDeliveryUnit": "",
 		"ProductProductionUnit": "",
-		"ProductStandardQuantityInBaseUnit": 5,
-		"ProductStandardQuantityInDeliveryUnit": 5,
-		"ProductStandardQuantityInProductionUnit": 5,
-		"BillOfMaterialHeaderText": "テスト1",
-		"ValidityStartDate": "2023-05-20",
-		"ValidityEndDate": "2023-05-20",
+		"ProductStandardQuantityInBaseUnit": null,
+		"ProductStandardQuantityInDeliveryUnit": null,
+		"ProductStandardQuantityInProductionUnit": null,
+		"BillOfMaterialHeaderText": "",
+		"ValidityStartDate": "",
+		"ValidityEndDate": "",
 		"CreationDate": "",
 		"LastChangeDate": "",
 		"IsMarkedForDeletion": null,
@@ -86,12 +86,37 @@
 						"FilePath": "",
 						"DocIssuerBusinessPartner": null
 					}
+				],
+				"ItemPricingElement": [
+					{
+						"PricingProcedureCounter": null,
+						"SupplyChainRelationshipID": null,
+						"ComponentProductBuyer": null,
+						"ComponentProductSeller": null,
+						"ConditionRecord": null,
+						"ConditionSequentialNumber": null,
+						"ConditionType": "",
+						"PricingDate": "",
+						"ConditionRateValue": null,
+						"ConditionRateValueUnit": null,
+						"ConditionScaleQuantity": null,
+						"ConditionCurrency": "",
+						"ConditionQuantity": null,
+						"TaxCode": "",
+						"ConditionAmount": null,
+						"TransactionCurrency": "",
+						"ConditionIsManuallyChanged": null,
+						"CreationDate": "",
+						"LastChangeDate": "",
+						"IsCancelled": null,
+						"IsMarkedForDeletion": null
+					}
 				]
 			}
 		]
 	},
-	"api_schema": "DPFMBillOfMaterialUpdates",
+	"api_schema": "DPFMBillOfMaterialCreates",
 	"accepter": [
-		"Header"
+		"All"
 	]
 }
